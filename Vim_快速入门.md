@@ -8,7 +8,10 @@ Neovim完全兼容Vim，Neovim也完全支持用vimscript来写配置，它俩�
 nvim除了支持使用vimscript来写配置，从0.5版本开始，nvim还添加了对lua的支持。
 
 # 终端问题
-mac下一定不要使用系统自带的终端Terminal.app，不然颜色丰富的主题theme都不能正常显示。 推荐[Alacritty](https://github.com/alacritty/alacritty), 最后是[iTerm2](https://github.com/gnachman/iTerm2)也行。
+mac下一定不要使用系统自带的终端Terminal.app，不然颜色丰富的主题theme都不能正常显示。
+- 推荐[Alacritty](https://github.com/alacritty/alacritty)
+- [Warp](https://github.com/warpdotdev/Warp)终端据说非常酷，也是用Rust开发的
+- [iTerm2](https://github.com/gnachman/iTerm2)也行。
 
 ## Alacritty 内存占用少,性能最好,缺点是不支持tab也没有默认配置.
 安装Alacritty `brew cask install alacritty`
@@ -714,7 +717,7 @@ nmap vs :vsplit<Return><C-w>w			"正常模式下，vs垂直切分窗口
 
 从系统剪贴板粘贴到vim
 
-- 方法一：在 **输入模式**下，使用**Ctrl + v**  也能从系统剪贴板粘贴到vim
+- 方法一：在 **输入模式**下，使用**Command + v**  也能从系统剪贴板粘贴到vim
 - 方法二： 
 ```vim
 "+p				注意前面的双引号"也要
