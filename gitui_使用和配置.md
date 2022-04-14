@@ -1,6 +1,6 @@
-[gitui](https://github.com/extrawurst/gitui)是使用Rust开发的一款git终端客户端，比[lazygit](https://github.com/jesseduffield/lazygit) 快。
+[gitui](https://github.com/extrawurst/gitui)是使用Rust开发的一款git **终端客户端**，比[lazygit](https://github.com/jesseduffield/lazygit) 快。跨平台Mac、Linux、Windows都可以使用。
 
-使用方法，直接在git仓库的目录下运行 **`gitui`**
+使用方法，mac使用 **`brew install gitui`** 安装后，直接在git仓库的目录下运行 **`gitui`**
 
 ## push出错`git error: Bad credentials`[解决办法](https://github.com/extrawurst/gitui/issues/495#issuecomment-854948221)
 
