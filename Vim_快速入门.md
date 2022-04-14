@@ -9,7 +9,7 @@ nvim除了支持使用vimscript来写配置，从0.5版本开始，nvim还添加
 
 # 终端问题
 mac下一定不要使用系统自带的终端Terminal.app，不然颜色丰富的主题theme都不能正常显示。
-- 推荐[Alacritty](https://github.com/alacritty/alacritty)
+- 推荐[Alacritty](https://github.com/alacritty/alacritty),使用Rust开发、优点是速度快、内存资源占用少
 - [Warp](https://github.com/warpdotdev/Warp)终端据说非常酷，也是用Rust开发的
 - [Tabby](https://github.com/Eugeny/tabby)也行，默认配置不错，缺点是内存资源占用偏多
 
@@ -205,7 +205,7 @@ key_bindings:
 	3. 建立软连接 `ln -s ***完整的目录***/nvim-osx64/bin/nvim   /usr/local/bin/nvim`
     4. 运行 `nvim`
  
-- (可选）替换默认的vim `nvim ~/.bashrc`
+- (可选）替换默认的vim `nvim ~/.bash_profile`
 	```bash
 	alias vim='nvim'
 	alias vi='nvim'
@@ -302,6 +302,8 @@ set shiftwidth=4
 set shiftround		    	" 表示缩进列数对齐到 shiftwidth 值的整数倍
 set expandtab			    " 转换tab为空格，按下Tab 键时，输入到的都是空格
 set smarttab                " 表示插入 Tab 时使用 shiftwidth
+
+scrolloff = 4               " 设定光标上下两侧最少保留的屏幕行数
 
 set nu						"显示行号
 
