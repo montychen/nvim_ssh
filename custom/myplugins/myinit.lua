@@ -43,7 +43,7 @@ return {
 		cmd = "UndotreeToggle",
 	},
 
-	-- 多光标
+	-- 多光标、多选择
 	{
 		"mg979/vim-visual-multi",
 		keys = "<C-n>",
@@ -55,13 +55,15 @@ return {
 	--   keys = "<CR>",
 	-- },
 
+
+
 	-- 代码格式化.  要手动安装各个语言的格式化程序 https://github.com/sbdchd/neoformat#supported-filetypes
-	{
-		"sbdchd/neoformat",
-		config = function()
-			require("custom.myplugins.myconfig.neoformat")
-		end,
-	},
+	-- {
+	-- 	"sbdchd/neoformat",
+	-- 	config = function()
+	-- 		require("custom.myplugins.myconfig.neoformat")
+	-- 	end,
+	-- },
 
 	-- MarkdownPreview
 	{
@@ -76,4 +78,16 @@ return {
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
+
+-- Hop 字词行快速定位跳转
+    {
+      "phaazon/hop.nvim",
+        load_file = true,
+        cmd = { "HopWord", "HopLine", "HopChar1", "HopChar2" },
+        config = function()
+           require("hop").setup()
+        end,
+   },
+
+
 }

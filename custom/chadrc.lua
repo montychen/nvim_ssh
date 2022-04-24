@@ -2,7 +2,7 @@
 
 -- Just an example, supposed to be placed in /lua/custom/
 
-local userPlugins = require("custom.myplugins.myinit") -- 加载自定义添加的插件 /lua/custom/myplugins/myinit.lua
+local user_plugins = require("custom.myplugins.myinit") -- 自己添加的插件/lua/custom/myplugins/myinit.lua
 local M = {}
 
 -- make sure you maintain the structure of `core/default_config.lua` here,
@@ -16,7 +16,7 @@ M.options = {
 	-- custom = {}
 	-- general nvim/vim options , check :h optionname to know more about an option
 
-	clipboard = "", -- 取消共享系统剪贴板。 在输入模式用 s-v 也就是 Command + v 也能从系统剪贴板粘贴到vim
+	clipboard = "", -- 取消共享系统剪贴板。 在输入模式 s-v 也就是 Command + v 从系统剪贴板粘贴到vim
 	tabstop = 4, -- tab 4个空格
 
 	terminal = { -- A-i 浮动终端切换，定义终端显示大小
@@ -36,16 +36,23 @@ M.options = {
 }
 
 M.plugins = {
-	install = userPlugins,
+	install = user_plugins,
 
 	-- enable/disable plugins (false for disable)
 	status = {
 		alpha = true, -- dashboard
 	},
 
+   options = {
+      statusline = {
+         shortline = true,
+         style = "default", -- default, round , slant , block , arrow
+       }
+   },
+
 	default_plugin_config_replace = {
 		nvim_treesitter = {
-			-- 增量选择代码块（很好用，打开了）感觉比gcmt/wildfire.vim 好用
+			-- 增量选择/选中代码块（很好用，打开了）感觉比gcmt/wildfire.vim 好用
 			incremental_selection = {
 				enable = true,
 				keymaps = {
@@ -60,7 +67,7 @@ M.plugins = {
 				},
 			},
 		},
-	},
+    },
 }
 
 return M
