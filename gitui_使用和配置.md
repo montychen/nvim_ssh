@@ -8,6 +8,11 @@
 
 2. 然后通过运行 `ssh-add ~/.ssh/id_rsa` 通过[ssh-add](https://blog.csdn.net/weixin_34357267/article/details/91673507)命令是把ssh专用密钥添加到ssh-agent的高速缓存中
 
+貌似这个方法有时也不行。 其实可以直接在终端命令行，用手动运行git push命令，也不复杂
+```
+git push origin main
+```
+
 ## gitui重新定义按键符合vim的习惯，默认按键不符合vim习惯， 不同OS配置文件的目录不同
 ```
 $HOME/.config/gitui/key_bindings.ron (mac)
