@@ -55,16 +55,6 @@ return {
 	--   keys = "<CR>",
 	-- },
 
-
-
-	-- 代码格式化.  要手动安装各个语言的格式化程序 https://github.com/sbdchd/neoformat#supported-filetypes
-	-- {
-	-- 	"sbdchd/neoformat",
-	-- 	config = function()
-	-- 		require("custom.myplugins.myconfig.neoformat")
-	-- 	end,
-	-- },
-
 	-- MarkdownPreview
 	{
 		"plasticboy/vim-markdown", --支持markdown编辑,
@@ -79,15 +69,39 @@ return {
 		end,
 	},
 
--- Hop 字词行快速定位跳转
-    {
-      "phaazon/hop.nvim",
-        load_file = true,
-        cmd = { "HopWord", "HopLine", "HopChar1", "HopChar2" },
-        config = function()
-           require("hop").setup()
-        end,
-   },
+	-- Hop 字词行快速定位跳转
+	{
+		"phaazon/hop.nvim",
+		load_file = true,
+		cmd = { "HopWord", "HopLine", "HopChar1", "HopChar2" },
+		config = function()
+			require("hop").setup()
+		end,
+	},
+
+	-- 边输入边实时显示快捷定义
+	{
+		"folke/which-key.nvim",
+		config = function()
+			require("which-key").setup({})
+		end,
+	},
+
+	-- 格式化   NvChad的<leader>fm shortcut 预设只在設妥lsp server 時才有作用，但null-ls format 不需要lsp server
+	{
+		"jose-elias-alvarez/null-ls.nvim",
+		after = "nvim-lspconfig",
+		config = function()
+			require("custom.myplugins.myconfig.null-ls").setup()
+		end,
+	},
+	-- 代码格式化. 这个不好用，null-ls更好用
+	-- {
+	-- 	"sbdchd/neoformat",
+	-- 	config = function()
+	-- 		require("custom.myplugins.myconfig.neoformat")
+	-- 	end,
+	-- },
 
 
 }

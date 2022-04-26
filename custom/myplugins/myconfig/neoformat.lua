@@ -13,10 +13,10 @@ vim.g.neoformat_only_msg_on_error = 1 -- 只提示错误消息
 
 -- 自动格式化
 
-vim.cmd([[
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
-]])
+-- vim.cmd([[
+-- augroup fmt
+--   autocmd!
+--   autocmd BufWritePre * undojoin | Neoformat
+-- augroup END
+-- ]])
 

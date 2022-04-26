@@ -20,7 +20,8 @@ map("n", "<leader>hl", ":HopLine <CR>")
 
 -- 格式化
 -- map("n", "<leader>cf", ":Neoformat<CR>")
-
+-- NvChad 的 <leader>fm shortcut 预设只在設妥 lsp server 時才有作用，但 null-ls format 不需要lsp server
+map("n", "<leader>fm", ":lua vim.lsp.buf.formatting_sync() <CR>")
 
 -- 不依赖插件的普通映射
 map("n", "<C-a>", "ggVG") -- 全选

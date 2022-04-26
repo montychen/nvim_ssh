@@ -18,6 +18,9 @@ M.options = {
 
 	clipboard = "", -- 取消共享系统剪贴板。 在输入模式 s-v 也就是 Command + v 从系统剪贴板粘贴到vim
 	tabstop = 4, -- tab 4个空格
+    shiftwidth = 4,
+    softtabstop = 4,
+    autoindent = true,
 
 	terminal = { -- A-i 浮动终端切换，定义终端显示大小
 		location = {
