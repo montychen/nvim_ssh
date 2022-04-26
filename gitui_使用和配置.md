@@ -6,9 +6,9 @@
 
 1. 在个人电脑上[设置SSHkey](https://www.jianshu.com/p/9ded3d993ca3)，实现SSH的自动登陆
 
-2. 然后通过运行 `ssh-add ~/.ssh/id_rsa` 通过[ssh-add](https://blog.csdn.net/weixin_34357267/article/details/91673507)命令是把ssh专用密钥添加到ssh-agent的高速缓存中
+2. 每次打开终端，都要先运行 `ssh-add ~/.ssh/id_rsa` 通过[ssh-add](https://blog.csdn.net/weixin_34357267/article/details/91673507)命令是把ssh专用密钥添加到ssh-agent的高速缓存中
 
-貌似这个方法有时也不行。 其实可以直接在终端命令行，用手动运行git push命令，也不复杂
+每次打开终端，都要先运行上面的命令，有时也烦。 其实可以直接在终端命令行，用手动运行git push命令，也不复杂
 ```
 git push origin main
 ```
