@@ -56,6 +56,7 @@ M.plugins = {
 	default_plugin_config_replace = {
 		nvim_treesitter = {
 			-- 增量选择/选中代码块（很好用，打开了）感觉比gcmt/wildfire.vim 好用
+            -- 要使用 :TSInstall 安装对应语言的才生效。 不然安装html支持  :TSInstall html 
 			incremental_selection = {
 				enable = true,
 				keymaps = {
