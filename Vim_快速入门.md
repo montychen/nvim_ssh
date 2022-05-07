@@ -245,13 +245,32 @@ curl -o /usr/local/bin/xkbswitch https://raw.githubusercontent.com/myshov/xkbswi
 
 [fd](https://github.com/sharkdp/fd)  **文件搜索**find的最好替代
 
+[NCDU](https://dev.yorhel.nl/ncdu) 查看当前目录下磁盘空间使用情况
+
+[htop](https://htop.dev/) 进程查看器
+
 [sed](https://www.gnu.org/software/sed/) 一种在线编辑器，它一次处理一行内容, 用于 nvim-spectre 的全局字符串替换。
 
 [ctags](https://github.com/universal-ctags/ctags) 用于LSP符号和标签的查看器和查找器
 ```bash
-brew install ripgrep fd gnu-sed ctags
+brew install ripgrep fd ncdu htop gnu-sed ctags
 ```
 
+使用Rust开发的[fnm](https://github.com/Schniz/fnm)安装node.js 和 npm会很方便
+```bash
+brew install fnm
+```
+
+在`~/.bash_profile`文件中加入
+```
+eval "$(fnm env --use-on-cd)"
+```
+
+使用 **fnm** 安装node.js 和 npm
+```
+fnm install --lts     
+npm install -g npm
+```
 
 
 ## 一些语言的 LSP language server依赖
