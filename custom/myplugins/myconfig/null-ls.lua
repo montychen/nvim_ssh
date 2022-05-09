@@ -1,4 +1,4 @@
-local null_ls = require("null-ls")
+   local null_ls = require("null-ls")
 local b = null_ls.builtins
 
 -- all null-ls built-in sources   https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
@@ -48,8 +48,6 @@ local sources = {
 	-- Lua
 	b.formatting.stylua,
 	b.diagnostics.luacheck.with({ extra_args = { "--global vim" } }),
-
-
 }
 
 local M = {}

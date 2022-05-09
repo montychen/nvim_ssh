@@ -1,16 +1,16 @@
 return {
 
 	-- 中文输入法自动切换，需要手动先安装依赖xkbswitch-macosx依赖
-	{ "rlue/vim-barbaric" },
-	-- { 'lyokha/vim-xkbswitch',      -- "中文自动输入法切换插件, 记得重启vim然后执行 :PlugInstall
+	[ "rlue/vim-barbaric" ] = {},
+	-- [ 'lyokha/vim-xkbswitch'] = {     -- "中文自动输入法切换插件, 记得重启vim然后执行 :PlugInstall
 	--   config = function()
 	--     vim.g.XkbSwitchEnabled = 1
 	--   end,
 	-- },
 
 	-- 平滑滚动，定义的快捷键和vim习惯一致。 C-d/C-u;  C-e/C-y就可以向下、向上平滑滚动。
-	{
-		"karb94/neoscroll.nvim",
+	[
+		"karb94/neoscroll.nvim"] = {
 		opt = true,
 		config = function() -- config 插件每次加载后运行
 			require("neoscroll").setup({})
@@ -37,15 +37,15 @@ return {
 	},
 
 	-- 历史修改记录  <A-u>
-	{
-		"mbbill/undotree",
+	[
+		"mbbill/undotree"] ={
 		opt = true,
 		cmd = "UndotreeToggle",
 	},
 
 	-- 多光标、多选择
-	{
-		"mg979/vim-visual-multi",
+	[
+		"mg979/vim-visual-multi"] ={
 		keys = "<C-n>",
 	},
 
@@ -56,13 +56,13 @@ return {
 	-- },
 
 	-- MarkdownPreview
-	{
-		"plasticboy/vim-markdown", --支持markdown编辑,
+	[
+		"plasticboy/vim-markdown"] = { --支持markdown编辑,
 		ft = { "markdown" },
 		require = { "godlygeek/tabular" },
 	},
-	{
-		"iamcco/markdown-preview.nvim", -- 在md文件下运行 :MarkdownPreview 可实时预览
+	[
+		"iamcco/markdown-preview.nvim"]={ -- 在md文件下运行 :MarkdownPreview 可实时预览
 		ft = { "markdown" }, -- 打开的文件类型是markdown文件时，才加载该插件
 		run = function()
 			vim.fn["mkdp#util#install"]()
@@ -70,8 +70,8 @@ return {
 	},
 
 	-- Hop 字词行快速定位跳转
-	{
-		"phaazon/hop.nvim",
+	[
+		"phaazon/hop.nvim"]={
 		load_file = true,
 		cmd = { "HopWord", "HopLine", "HopChar1", "HopChar2" },
 		config = function()
@@ -80,16 +80,16 @@ return {
 	},
 
 	-- 边输入边实时显示快捷定义
-	{
-		"folke/which-key.nvim",
+	[
+		"folke/which-key.nvim"]={
 		config = function()
 			require("which-key").setup({})
 		end,
 	},
 
 	-- 格式化   NvChad的<leader>fm shortcut 预设只在設妥lsp server 時才有作用，但null-ls format 不需要lsp server
-	{
-		"jose-elias-alvarez/null-ls.nvim",
+	[
+		"jose-elias-alvarez/null-ls.nvim"]={
 		after = "nvim-lspconfig",
 		config = function()
 			require("custom.myplugins.myconfig.null-ls").setup()

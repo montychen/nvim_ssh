@@ -1,6 +1,6 @@
 -- S代表Shift键盘；s代表Command键，M代表option键盘, C代表Control键盘
 
-local map = require("core.utils").map
+   local map = require("core.utils").map
 
 map("n", "<leader>cc", ":Telescope <CR>")
 map("n", "<leader>q", ":q <CR>")
