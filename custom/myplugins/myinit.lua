@@ -9,43 +9,39 @@ return {
 	-- },
 
 	-- 平滑滚动，定义的快捷键和vim习惯一致。 C-d/C-u;  C-e/C-y就可以向下、向上平滑滚动。
-	[
-		"karb94/neoscroll.nvim"] = {
+	["karb94/neoscroll.nvim"] = {
 		opt = true,
 		config = function() -- config 插件每次加载后运行
-			require("neoscroll").setup({})
-
-			local t = {}
-			-- Syntax: t[keys] = {function, {function arguments}}
-			t["<C-u>"] = { "scroll", { "-10", "true", "150" } } -- 光标向上移动10行
-			t["<C-d>"] = { "scroll", { "10", "true", "150" } } -- 光标向下移动10行
-			t["<C-b>"] = { "scroll", { "-vim.api.nvim_win_get_height(0)", "true", "450" } } -- 向上翻1页
-			t["<C-f>"] = { "scroll", { "vim.api.nvim_win_get_height(0)", "true", "450" } } -- 向下翻1页
-			t["<C-y>"] = { "scroll", { "-1", "false", "100" } } -- 屏幕向上翻1行
-			t["<C-e>"] = { "scroll", { "1", "false", "100" } } -- 屏幕向下翻1行
-			t["zt"] = { "zt", { "150" } } -- 把当前行移动到屏幕顶部
-			t["zz"] = { "zz", { "150" } } -- 把当前行移动到屏幕中间
-			t["zb"] = { "zb", { "150" } } -- 把当前行移动到屏幕底部
-
-			require("neoscroll.config").set_mappings(t)
+			-- require("custom.myplugins.myconfig.neoscroll").setup()
+            require('neoscroll').setup({})
+                local t = {}
+                -- Syntax: t[keys] = {function, {function arguments}}
+                    t['<C-u>'] = {'scroll', {'-10', 'true', '250'}}
+                    t['<C-d>'] = {'scroll', { '10', 'true', '250'}}
+                    t['<C-b>'] = {'scroll', {'-vim.api.nvim_win_get_height(0)', 'true', '450'}}
+                    t['<C-f>'] = {'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '450'}}
+                    t['<C-y>'] = {'scroll', {'-0.10', 'false', '100'}}
+                    t['<C-e>'] = {'scroll', { '0.10', 'false', '100'}}
+                    t['zt']    = {'zt', {'250'}}
+                    t['zz']    = {'zz', {'250'}}
+                    t['zb']    = {'zb', {'250'}}
+                require('neoscroll.config').set_mappings(t)
 		end,
 
-		-- lazy loading
+		-- -- lazy loading
 		setup = function() -- setup 插件每次加载前运行
-			require("core.utils").packer_lazy_load("neoscroll.nvim")
+			nvchad.packer_lazy_load "neoscroll.nvim"
 		end,
 	},
 
 	-- 历史修改记录  <A-u>
-	[
-		"mbbill/undotree"] ={
+	["mbbill/undotree"] ={
 		opt = true,
 		cmd = "UndotreeToggle",
 	},
 
 	-- 多光标、多选择
-	[
-		"mg979/vim-visual-multi"] ={
+	["mg979/vim-visual-multi"] ={
 		keys = "<C-n>",
 	},
 
@@ -56,13 +52,11 @@ return {
 	-- },
 
 	-- MarkdownPreview
-	[
-		"plasticboy/vim-markdown"] = { --支持markdown编辑,
+	["plasticboy/vim-markdown"] = { --支持markdown编辑,
 		ft = { "markdown" },
 		require = { "godlygeek/tabular" },
 	},
-	[
-		"iamcco/markdown-preview.nvim"]={ -- 在md文件下运行 :MarkdownPreview 可实时预览
+	["iamcco/markdown-preview.nvim"]={ -- 在md文件下运行 :MarkdownPreview 可实时预览
 		ft = { "markdown" }, -- 打开的文件类型是markdown文件时，才加载该插件
 		run = function()
 			vim.fn["mkdp#util#install"]()
@@ -70,8 +64,7 @@ return {
 	},
 
 	-- Hop 字词行快速定位跳转
-	[
-		"phaazon/hop.nvim"]={
+	["phaazon/hop.nvim"]={
 		load_file = true,
 		cmd = { "HopWord", "HopLine", "HopChar1", "HopChar2" },
 		config = function()
@@ -79,17 +72,9 @@ return {
 		end,
 	},
 
-	-- 边输入边实时显示快捷定义
-	[
-		"folke/which-key.nvim"]={
-		config = function()
-			require("which-key").setup({})
-		end,
-	},
 
 	-- 格式化   NvChad的<leader>fm shortcut 预设只在設妥lsp server 時才有作用，但null-ls format 不需要lsp server
-	[
-		"jose-elias-alvarez/null-ls.nvim"]={
+	["jose-elias-alvarez/null-ls.nvim"]={
 		after = "nvim-lspconfig",
 		config = function()
 			require("custom.myplugins.myconfig.null-ls").setup()

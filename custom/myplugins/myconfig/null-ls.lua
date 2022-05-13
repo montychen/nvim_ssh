@@ -1,14 +1,11 @@
-   local null_ls = require("null-ls")
+local null_ls = require("null-ls")
 local b = null_ls.builtins
 
 -- all null-ls built-in sources   https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 local sources = {
-	-- javascript / css / json / yaml
-	b.formatting.prettier,
-	b.diagnostics.eslint,
-	b.diagnostics.stylelint,
-	b.diagnostics.jsonlint,
-	b.diagnostics.yamllint,
+    -- webdev stuff
+   b.formatting.deno_fmt,
+   b.formatting.prettier.with { filetypes = { "html", "markdown", "css" } },
 
 	-- markdown
 	b.formatting.markdownlint,
@@ -18,11 +15,6 @@ local sources = {
 	b.formatting.clang_format,
 	b.diagnostics.cppcheck,
 
-	-- python
-	b.formatting.black.with({
-		command = vim.fn.expand("~/.local/bin/black"),
-	}),
-	b.diagnostics.pylint,
 
 	-- golang
 	b.formatting.gofmt,
@@ -41,13 +33,11 @@ local sources = {
 
 
     --- ==== blow test by 大军 is ok! can work ===================
-    
 	-- Rust
 	b.formatting.rustfmt,
 
 	-- Lua
 	b.formatting.stylua,
-	b.diagnostics.luacheck.with({ extra_args = { "--global vim" } }),
 }
 
 local M = {}
