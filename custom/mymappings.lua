@@ -1,6 +1,5 @@
 -- S代表Shift键盘；s代表Command键，M代表option键盘, C代表Control键盘
 
-local map = nvchad.map 
 local M = {}
 
 M.nvimtree = {
