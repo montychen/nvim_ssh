@@ -7,6 +7,13 @@ Neovim完全兼容Vim，Neovim也完全支持用vimscript来写配置，它俩�
 
 nvim除了支持使用vimscript来写配置，从0.5版本开始，nvim还添加了对lua的支持。
 
+# Shell使用[zsh](https://github.com/ohmyzsh/ohmyzsh)
+zsh它明细比 bash 好用, 安装
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+在zsh的配置文件`~/.zshrc`末尾加入一行 `source ~/.bash_profile`。 这样，在~/.bash_profile里做的设置在zsh里也能生效
+
 # 终端问题
 mac下一定不要使用系统自带的终端Terminal.app，不然颜色丰富的主题theme都不能正常显示。
 - 推荐[Alacritty](https://github.com/alacritty/alacritty),使用Rust开发、优点是速度快、内存资源占用少；缺点是不支持tab也没有默认配置。MacOS下Option|Alt按键要手动映射才行
@@ -234,7 +241,7 @@ pip3 install ranger-fm pynvim
 
 vim-barbaric中文输入自动却换，安装系统依赖
 ```bash
-# 如果 /usr/local/bin 目录不存在，要先创建在执行下面的命令  sudo mkdir /usr/local/bin
+# 如果 /usr/local/bin 目录不存在，要先创建这个目录 sudo mkdir /usr/local/bin 然后在执行下面的命令 
 sudo chown -R $(whoami) /usr/local
 curl -o /usr/local/bin/xkbswitch https://raw.githubusercontent.com/myshov/xkbswitch-macosx/master/bin/xkbswitch
 ```
