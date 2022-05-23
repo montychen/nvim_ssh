@@ -9,9 +9,9 @@ nvim除了支持使用vimscript来写配置，从0.5版本开始，nvim还添加
 
 # 终端问题
 mac下一定不要使用系统自带的终端Terminal.app，不然颜色丰富的主题theme都不能正常显示。
-- 推荐[Alacritty](https://github.com/alacritty/alacritty),使用Rust开发、优点是速度快、内存资源占用少；缺点是不支持tab也没有默认配置.
+- 推荐[Alacritty](https://github.com/alacritty/alacritty),使用Rust开发、优点是速度快、内存资源占用少；缺点是不支持tab也没有默认配置。MacOS下Option|Alt按键要手动映射才行
 - [Warp](https://github.com/warpdotdev/Warp)终端据说非常酷，也是用Rust开发的
-- [Tabby](https://github.com/Eugeny/tabby)也行，默认配置不错，缺点是内存资源占用偏多
+- [Tabby](https://github.com/Eugeny/tabby)也行，默认配置不错，缺点是内存资源占用偏多。MacOS下Option|Alt按键估计也要手动映射才行
 
 安装alacritty 和 tabby
 ```bash
@@ -196,12 +196,6 @@ key_bindings:
 ```
 
 
-## 终端[Tabby](https://github.com/Eugeny/tabby) ,默认配置很好，缺点是内存占用高, MacOS下Option|Alt按键估计也要重新映射才行
-安装 `brew install tabby`
-
-
-
-
 # 安装vim & nvim
 - mac下安装Neovim	 ` brew install neovim ` 。有时brew的版本太低，可以直接从nvim的github官网下载最新版本
 	1. 下载最新版本的二进制包： `nvim-macos.tar.gz`
@@ -240,6 +234,8 @@ pip3 install ranger-fm pynvim
 
 vim-barbaric中文输入自动却换，安装系统依赖
 ```bash
+# 如果 /usr/local/bin 目录不存在，要先创建在执行下面的命令  sudo mkdir /usr/local/bin
+sudo chown -R $(whoami) /usr/local
 curl -o /usr/local/bin/xkbswitch https://raw.githubusercontent.com/myshov/xkbswitch-macosx/master/bin/xkbswitch
 ```
 
