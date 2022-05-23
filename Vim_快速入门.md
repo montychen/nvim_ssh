@@ -9,14 +9,18 @@ nvim除了支持使用vimscript来写配置，从0.5版本开始，nvim还添加
 
 # 终端问题
 mac下一定不要使用系统自带的终端Terminal.app，不然颜色丰富的主题theme都不能正常显示。
-- 推荐[Alacritty](https://github.com/alacritty/alacritty),使用Rust开发、优点是速度快、内存资源占用少
+- 推荐[Alacritty](https://github.com/alacritty/alacritty),使用Rust开发、优点是速度快、内存资源占用少；缺点是不支持tab也没有默认配置.
 - [Warp](https://github.com/warpdotdev/Warp)终端据说非常酷，也是用Rust开发的
 - [Tabby](https://github.com/Eugeny/tabby)也行，默认配置不错，缺点是内存资源占用偏多
 
-## Alacritty 内存占用少,性能最好,缺点是不支持tab也没有默认配置.
-安装Alacritty `brew cask install alacritty`
+安装alacritty 和 tabby
+```bash
+brew install --cask alacritty tabby
+```
 
-创建配置文件alacritty.yml。Alacritty 默认不会添加配置文件，要手动添加
+## Alacritty 没有默认配置，要手动添加
+
+创建配置文件alacritty.yml。
 ```bash
 mkdir ~/.config/alacritty
 touch ~/.config/alacritty/alacritty.yml
