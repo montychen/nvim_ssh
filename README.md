@@ -45,9 +45,10 @@ NvChad默认 **Leader键**映射的是**空格键**。 查看所有默认快捷�
 <Leader> + ch 
 ```
 
-克隆拉取NvChad的自定义配置, 并放到 **nvim/lua/custome** 目录下
+克隆拉取NvChad的自定义配置, 并通过ln软连接到 **~/.config/nvim/lua/custome** 目录下
 ```
-git clone https://github.com/montychen/nvim  ~/.config/nvim/lua/custom
+git clone https://github.com/montychen/nvim  ~/.dj_soft/dj_nvim
+ln -s ~/.dj_soft/dj_nvim/custom  ~/.config/nvim/lua/custom
 
 ```
 
