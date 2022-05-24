@@ -8,22 +8,12 @@ git config --global user.email "dj2503@qq.com"
 
 
 # 用github账号的邮箱生产SSH公钥
-github对SSH密钥做了升级，原来的SHA-1，rsa等一些已经不支持了, 生成新的Ed25519密钥对
+github对SSH密钥做了升级，原来的SHA-1，rsa等一些已经不支持了, 用新的ed25519密钥对
 
-回车之后会出现如下所示的输出，直接按回车即可。
+回车之后会出现如下所示的输出，都直接按回车即可。
 ```bash
 ssh-keygen -t ed25519 -C "dj2503@qq.com"
 ```
-
-
-
-<pre>
-Generating public/private rsa key pair.
-Enter file in which to save the key
-(/Users/your_user_directory/.ssh/id_rsa): (按回车键)
-Enter passphrase (empty for no passphrase): (按回车键)
-Enter same passphrase again: (按回车键)
-</pre>
 在默认用户目录`~/.ssh`下会生成秘钥文件
 
 <pre>
@@ -37,11 +27,11 @@ total 32
 
 #  通过ssh-add命令是把ssh私钥添加到ssh-agent的高速缓存中 
 ```bash
-ssh-add  ~/.ssh/id_ed2551
+ssh-add  ~/.ssh/id_ed25519
 ```
 
-# 将公钥id_rsa.pub(注意不是id_ed25519)添加到github中
-登陆github账号，在setting设置界面点击 **SSH and GPG keys** New SSH key，在Title中取一个名字（任意），key中填入**id_ed25519.pub**文件里的所有内容( **ssh-rsa 到以 dj2503@qq.com结尾** 的所有内容)。然后点击Add SSH key即可。
+# 将公钥id_ed25519.pub(注意不是id_ed25519)添加到github中
+登陆github账号，在setting设置界面点击 **SSH and GPG keys** New SSH key，在Title中取一个名字（任意），key中填入**id_ed25519.pub**文件里的所有内容( **ssh-ed25519 到以 dj2503@qq.com结尾** 的所有内容)。然后点击Add SSH key即可。
 
 
 # 测试SSH设置是否成功
