@@ -82,7 +82,7 @@ font:
     style: Bold Italic
 
   # 字大小
-  size: 19.0 
+  size: 20.0 
 
   offset:
     x: 0
@@ -226,24 +226,26 @@ brew install font-hack-nerd-font --cask
 
 
 # 一些插件要安装系统依赖，mac的安装方式。
-安装python支持，有一些好用的插件需要python3支持
+~~安装python支持，有一些好用的插件需要python3支持~~
 ```bash
 brew install python3
 pip3 install neovim --upgrade
 ```
 
-ranger悬浮文件管理器，安装系统依赖
+~~ranger悬浮文件管理器，安装系统依赖~~
 
 ```bash
 # macOS users please install ranger by `pip3 ranger-fm` instead of `brew install ranger`
 pip3 install ranger-fm pynvim
 ```
 
-vim-barbaric中文输入自动却换，安装系统依赖
+vim-barbaric中文输入自动却换，需要先安装系统依赖xkbswitch。macOS新系统没有 /usr/local/bin/ 目录，所有要手动创建，还要赋予xkbswitch可执行权限
 ```bash
 # 如果 /usr/local/bin 目录不存在，要先创建这个目录 sudo mkdir /usr/local/bin 然后在执行下面的命令 
+sudo mkdir /usr/local/bin
 sudo chown -R $(whoami) /usr/local
 curl -o /usr/local/bin/xkbswitch https://raw.githubusercontent.com/myshov/xkbswitch-macosx/master/bin/xkbswitch
+chmod a+x /usr/local/bin/xkbswitch
 ```
 
 模糊搜索telescope, 安装系统依赖
