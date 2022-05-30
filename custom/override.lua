@@ -6,7 +6,7 @@ local M = {}
 M.blankline = {
     space_char_blankline = " ",
     show_current_context = true,
-} 
+}
 
 M.nvterm = {
    terminals = {
@@ -56,5 +56,20 @@ M.treesitter = {
 			},
         }
 
+
+M.nvimtree = {
+   git = {
+      enable = true,
+   },
+
+   renderer = {
+      highlight_git = true,
+      icons = {
+         show = {
+            git = true,
+         },
+      },
+   },
+}
 
 return M

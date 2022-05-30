@@ -9,36 +9,41 @@ return {
 	-- },
 
 	-- 平滑滚动，定义的快捷键和vim习惯一致。 C-d/C-u;  C-e/C-y就可以向下、向上平滑滚动。
-	["karb94/neoscroll.nvim"] = {
-		opt = true,
-		config = function() -- config 插件每次加载后运行
-			-- require("custom.myplugins.myconfig.neoscroll").setup()
-            require('neoscroll').setup({})
-                local t = {}
-                -- Syntax: t[keys] = {function, {function arguments}}
-                    t['<C-u>'] = {'scroll', {'-10', 'true', '250'}}
-                    t['<C-d>'] = {'scroll', { '10', 'true', '250'}}
-                    t['<C-b>'] = {'scroll', {'-vim.api.nvim_win_get_height(0)', 'true', '450'}}
-                    t['<C-f>'] = {'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '450'}}
-                    t['<C-y>'] = {'scroll', {'-0.10', 'false', '100'}}
-                    t['<C-e>'] = {'scroll', { '0.10', 'false', '100'}}
-                    t['zt']    = {'zt', {'250'}}
-                    t['zz']    = {'zz', {'250'}}
-                    t['zb']    = {'zb', {'250'}}
-                require('neoscroll.config').set_mappings(t)
-		end,
+       ["psliwka/vim-smoothie"] = {},
 
-		-- -- lazy loading
-		setup = function() -- setup 插件每次加载前运行
-			nvchad.packer_lazy_load "neoscroll.nvim"
-		end,
-	},
+	-- ["karb94/neoscroll.nvim"] = {
+	-- 	opt = true,
+	-- 	config = function() -- config 插件每次加载后运行
+    --         require('neoscroll').setup()
+			-- require("custom.myplugins.myconfig.neoscroll").setup()
+            -- require('neoscroll').setup({})
+            --     local t = {}
+            --     -- Syntax: t[keys] = {function, {function arguments}}
+            --         t['<C-u>'] = {'scroll', {'-10', 'true', '250'}}
+            --         t['<C-d>'] = {'scroll', { '10', 'true', '250'}}
+            --         t['<C-b>'] = {'scroll', {'-vim.api.nvim_win_get_height(0)', 'true', '450'}}
+            --         t['<C-f>'] = {'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '450'}}
+            --         t['<C-y>'] = {'scroll', {'-0.10', 'false', '100'}}
+            --         t['<C-e>'] = {'scroll', { '0.10', 'false', '100'}}
+            --         t['zt']    = {'zt', {'250'}}
+            --         t['zz']    = {'zz', {'250'}}
+            --         t['zb']    = {'zb', {'250'}}
+            --     require('neoscroll.config').set_mappings(t)
+            --
+		-- end,
+	--
+	-- 	-- -- lazy loading
+	-- 	setup = function() -- setup 插件每次加载前运行
+	-- 		nvchad.packer_lazy_load "neoscroll.nvim"
+	-- 	end,
+	-- },
 
 	-- 历史修改记录  <A-u>
-	["mbbill/undotree"] ={
-		opt = true,
-		cmd = "UndotreeToggle",
-	},
+	-- ["mbbill/undotree"] ={
+	-- 	opt = true,
+	-- 	cmd = "UndotreeToggle",
+	-- },
+
 
 	-- 多光标、多选择
 	["mg979/vim-visual-multi"] ={
@@ -73,7 +78,7 @@ return {
 	},
 
 
-	-- 格式化   NvChad的<leader>fm shortcut 预设只在設妥lsp server 時才有作用，但null-ls format 不需要lsp server
+	-- 格式化 NvChad的<leader>fm shortcut 预设只在設妥lsp server 時才有作用，但null-ls format 不需要lsp server
 	["jose-elias-alvarez/null-ls.nvim"]={
 		after = "nvim-lspconfig",
 		config = function()
@@ -88,5 +93,47 @@ return {
 	-- 	end,
 	-- },
 
+    -- 使用treesitter自动补全html标签
+    ["windwp/nvim-ts-autotag"] = {
+      ft = { "html", "javascriptreact" },
+      after = "nvim-treesitter",
+      config = function()
+         local present, autotag = pcall(require, "nvim-ts-autotag")
+
+         if present then
+            autotag.setup()
+         end
+      end,
+   },
+
+
+    ["nvim-neorg/neorg"] = {
+      ft = "norg",
+      after = "nvim-treesitter",
+      config = function()
+         require "custom.myplugins.myconfig.neorg"
+      end,
+   },
+
+
+    -- 自动调暗不活动的窗口
+  ["andreadev-it/shade.nvim"] = {
+      config = function ()
+           require'shade'.setup({
+               overlay_opacity = 50,
+               opacity_step = 1,
+               keys = {
+                 brightness_up    = '<C-Up>',
+                 brightness_down  = '<C-Down>',
+                 toggle           = '<Leader>s',
+               },
+               exclude_filetypes = { "neo-tree", "markdown" }
+           })
+      end,
+
+   },
+
+
 
 }
+

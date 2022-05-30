@@ -1,7 +1,6 @@
 --  S代表Shift键盘；s代表Command键，M或A代表option键盘, C代表Control键盘
 
 local override = require "custom.override"
-local user_plugins = require "custom.myplugins.myinit" -- 自己添加的插件/lua/custom/myplugins/myinit.lua
 local M = {}
 
 M.mappings = require "custom.mymappings"
@@ -19,7 +18,7 @@ M.options = {
 
 M.plugins = {
     -- add yourself plugins
-    user = user_plugins,
+    user = require "custom.myplugins.myinit", -- 自己添加的插件/lua/custom/myplugins/myinit.lua
 
    options = {
       statusline = {
@@ -32,6 +31,7 @@ M.plugins = {
    },
 
  override = {
+      ["kyazdani42/nvim-tree.lua"] = override.nvimtree,
       ["NvChad/nvterm"] = override.nvterm,
       ["nvim-treesitter/nvim-treesitter"] = override.treesitter,
       ["lukas-reineke/indent-blankline.nvim"] = override.blankline,

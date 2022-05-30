@@ -10,13 +10,13 @@ M.nvimtree = {
    },
 }
 
-M.nvterm = {
-    n = {
-        -- 默认定义的这2个mapping始终创建新的·水平or垂直终端，不好用，这里把他俩取消
-        ["<leader>h"] = "",
-        ["<leader>v"] = "",
-      },
-}
+-- M.nvterm = {
+--     n = {
+--         -- 默认定义的这2个mapping始终创建新的·水平or垂直终端，不好用，这里把他俩取消
+--         ["<leader>h"] = "",
+--         ["<leader>v"] = "",
+--       },
+-- }
 
 M.hop = {  -- Hop 字词行快速定位跳转
     n = {
@@ -38,6 +38,18 @@ M.null_ls = {   -- NvChad 的 <leader>fm shortcut 预设只在設妥 lsp server 
     n = {
         ["<leader>cf"] = {"<cmd>lua vim.lsp.buf.formatting_sync() <CR>", "code format"},
     },
+}
+
+M.shade = {
+   n = {
+      ["<leader>s"] = {
+         function()
+            require("shade").toggle()
+         end,
+
+         "   toggle shade.nvim",
+      },
+   },
 }
 
 
