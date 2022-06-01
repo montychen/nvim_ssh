@@ -37,8 +37,7 @@ Nvim内置[TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)支持
 安装 *NvChad* 
 
 ```bash
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 ; nvim
 ```
 NvChad默认 **Leader键**映射的是**空格键**。 查看所有默认快捷键映射 
 ```
