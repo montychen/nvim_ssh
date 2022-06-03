@@ -45,15 +45,17 @@ ssh -T git@github.com
 ```
 出现以下结果即为成功: `Hi montychen! You've successfully authenticated, but GitHub does not provide shell access.`
 
-# 使用 `git remote -v` 查看本地Git仓库提交代码的验证方式：https还是ssh 
-出现下面内容说明还是通过https方式访问的。
+# 查看本地仓库push代码的验证方式：https还是ssh 
+ **`git remote -v`** 在本地git仓库目录输入这个命令，出现下面内容说明是通过https方式访问的。
 <pre>
 $ git remote -v
     origin	https://github.com/montychen/lang_digest.git (fetch)
     origin	https://github.com/montychen/lang_digest.git (push)
 </pre>
-下面把访问方式改为ssh方式，在终端命令行输入如下命令： `git remote set-url origin 登录你的github项目拿到的ssh克隆地址`
+
+把访问方式改为ssh方式，在终端命令行输入如下命令： `git remote set-url origin 登录你的github项目拿到的ssh克隆地址`
 ```
 git remote set-url origin git@github.com:montychen/lang_digest.git
 ```
-**以后就可以直接在git仓库目录下通过`git push`以免密的方式提交代码了
+以后就可以直接在git仓库目录下通过`git push`以免密的方式提交代码了
+
