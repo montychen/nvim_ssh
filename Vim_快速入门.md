@@ -571,7 +571,7 @@ use 'rlue/vim-barbaric'     --中文输入法自动切换，这里使用packer.n
 
 1. 拷贝xkbswitch 到 /usr/local/bin
    ```bash
-   git clone https://link.zhihu.com/?target=https%3A//github.com/myshov/xkbswitch-macosx
+   git clone git@github.com:myshov/xkbswitch-macosx.git  
    cp xkbswitch-macosx/bin/xkbswitch /usr/local/bin
    ```
 

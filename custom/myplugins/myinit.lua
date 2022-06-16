@@ -2,11 +2,11 @@ return {
 
 	-- 中文输入法自动切换，需要手动先安装依赖xkbswitch-macosx依赖
 	[ "rlue/vim-barbaric" ] = {},
-	-- [ 'lyokha/vim-xkbswitch'] = {     -- "中文自动输入法切换插件, 记得重启vim然后执行 :PlugInstall
-	--   config = function()
-	--     vim.g.XkbSwitchEnabled = 1
-	--   end,
-	-- },
+--	[ 'lyokha/vim-xkbswitch'] = {     -- "中文自动输入法切换插件, 记得重启vim然后执行 :PlugInstall
+--	  config = function()
+--	    vim.g.XkbSwitchEnabled = 1
+--	  end,
+--	},
 
 	-- 平滑滚动，定义的快捷键和vim习惯一致。 C-d/C-u;  C-e/C-y就可以向下、向上平滑滚动。
        ["psliwka/vim-smoothie"] = {},
