@@ -134,6 +134,21 @@ return {
    },
 
 
+-- 貌似nvchad自带的终端<A-i>不好用。  试试这个浮动终端看看 自定义快捷键是<A-f>
+   ["numToStr/FTerm.nvim"] = {
+        config = function ()
+            require'FTerm'.setup({
+                border = 'double',
+                dimensions  = {
+                    height = 0.95,
+                    width = 0.95,
+                },
+            })
+        end,
+
+        -- vim.keymap.set('n', '<A-f>', '<CMD>lua require("FTerm").toggle()<CR>')
+        -- vim.keymap.set('t', '<A-f>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+   },
 
 }
 

@@ -2,6 +2,27 @@
 
 local M = {}
 
+
+-- 貌似nvchad自带的终端<A-i>不好用。  试试这个浮动终端看看 自定义快捷键是<A-f>
+M.FTerm = {
+    n = {
+      ["<A-f>"] = {       -- vim.keymap.set('n', '<A-f>', '<CMD>lua require("FTerm").toggle()<CR>')
+        function ()
+          require("FTerm").toggle()
+        end,
+        "切换FTerm浮动终端"
+      },
+    },
+    t = {
+      ["<A-f>"] = {
+        function ()
+          require("FTerm").toggle()
+        end,
+        "切换FTerm浮动终端"
+      },
+    },
+}
+
 M.nvimtree = {
    n = {
       -- toggle 文件树

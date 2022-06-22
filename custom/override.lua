@@ -14,10 +14,10 @@ M.nvterm = {
       type_opts = {
          float = {
             relative = "editor",
-            row = 0.3,
-            col = 0.3,
-            width = 0.8,
-            height = 0.8,
+            -- row = 0.3,
+            -- col = 0.3,
+            width = 0.9,
+            height = 0.9,
             border = "single",
          },
          horizontal = { location = "rightbelow", split_ratio = 0.3 },
