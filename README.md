@@ -51,15 +51,3 @@ ln -s ~/.dj_soft/dj_nvim/custom  ~/.config/nvim/lua/custom
 
 ```
 
-# AstroNvim
-在[AstroNvim](https://github.com/AstroNvim/AstroNvim)的基础上进行定制，AstroNvim的安装目录是 `~/.config/nvim` , 我们的自定义都放在 **`~/.config/nvim/lua/user`** 目录下
-
-安装AstroNvim
-```
-git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-nvim +PackerSync
-```
-
-更新 AstroNvim `:AstroUpdate`
-
-

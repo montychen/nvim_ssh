@@ -686,8 +686,9 @@ let g:vim_markdown_folding_disabled = 1  "设置md标题默认不折叠
  "  6 -> solid vertical bar`
 ```
 
-
 # vim常用命令or操作
+S代表Shift键盘；s代表Command键，M代表option键盘, C代表Control键盘
+
 ## 基本配置
 ```vim
  " autocmd! bufwritepost .vimrc source ~/.vimrc	                      "当 .vimrc 被修改时, 自动重新加载 
@@ -709,7 +710,7 @@ set mouse=a             "开启鼠标支持
 autocmd InsertLeave,WinEnter * set cursorline    "高亮当前行
 autocmd InsertEnter,WinLeave * set nocursorline  "插入模式，取消当前行高亮
 
-set scrolloff=4			"jk移动时光标到底部时，光标上下方保留4行
+set scrolloff=2			"jk移动时光标到底部时，光标上下方保留2行
 set sidescrolloff=4
 ```
 
@@ -723,7 +724,9 @@ nmap sp :split<Return><C-w>w			"正常模式下，sp水平切分窗口
 nmap vs :vsplit<Return><C-w>w			"正常模式下，vs垂直切分窗口
 ```
 
-
+## 撤销or取消操作
+    undo: u
+    redo: C-r 撤销undo
 
 ## 拆分窗口
 	水平拆分 :sp
@@ -737,6 +740,8 @@ nmap vs :vsplit<Return><C-w>w			"正常模式下，vs垂直切分窗口
 
 ## 回到上次编辑的地方
     g;
+## 选中" ' ) ...等里面的内容
+    进入 VISUAL模式， 按i  再按 （ ‘ “ 。。。 就会自动选中被这些符号包围的内容。
 
 ## 系统剪贴板clipboard
 从vim复制到系统剪贴板复制 
