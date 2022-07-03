@@ -38,6 +38,9 @@ local sources = {
 
 	-- Lua
 	b.formatting.stylua,
+
+    -- zig
+    b.formatting.zigfmt,
 }
 
 local M = {}
