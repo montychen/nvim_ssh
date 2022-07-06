@@ -41,7 +41,7 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 ; nvim
 ```
 NvChad默认 **Leader键**映射的是**空格键**。 查看所有默认快捷键映射 
 ```
-<Leader> + ch 
+<Leader> + tk 
 ```
 
 克隆拉取NvChad的自定义配置, 并通过ln软连接到 **~/.config/nvim/lua/custome** 目录下
