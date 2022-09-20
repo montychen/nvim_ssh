@@ -16,14 +16,56 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # 终端问题
 mac下一定不要使用系统自带的终端Terminal.app，不然颜色丰富的主题theme都不能正常显示。
+- [wezterm](https://github.com/wez/wezterm) 是一款Rust开发，使用GPU加速的终端， 支持Tab，Option|Alt按键默认已经支持, 当前除了字体渲染比Alacritty差点，没发现其它缺点。
 - 推荐[Alacritty](https://github.com/alacritty/alacritty),使用Rust开发、优点是速度快、内存资源占用少；缺点是不支持tab也没有默认配置。MacOS下Option|Alt按键要手动映射才行
 - [Warp](https://github.com/warpdotdev/Warp)终端据说非常酷，也是用Rust开发的
 - [Tabby](https://github.com/Eugeny/tabby)也行，默认配置不错，缺点是内存资源占用偏多。MacOS下Option|Alt按键估计也要手动映射才行
 
-安装alacritty 和 tabby
+安装 wezterm 、 alacritty 和 tabby
 ```bash
-brew install --cask alacritty tabby
+brew install --cask  wezterm alacritty tabby
 ```
+
+## wezterm使用lua配置，没有默认配置，要手动添加 
+```bash
+mkdir ~/.config/wezterm
+touch ~/.config/wezterm/wezterm.lua
+```
+我的配置 **wezterm.lua**
+```lua
+-- config: https://wezfurlong.org/wezterm/config/lua/config/index.html
+local wezterm = require 'wezterm';
+return {
+  font = wezterm.font_with_fallback({
+    "Hack Nerd Font",
+    -- "Iosevka Nerd Font",
+    -- "Noto Sans SC",
+  }),
+  font_size = 20.0,
+  -- color scheme can be found here: https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/wezterm
+  -- color_scheme = "Solarized Dark - Patched",
+  default_cursor_style = "BlinkingBar",
+  cursor_blink_rate = 400,
+  force_reverse_video_cursor = false,
+  enable_tab_bar = true,
+  use_fancy_tab_bar = true,
+  hide_tab_bar_if_only_one_tab = true,
+  tab_bar_at_bottom = false,
+  window_padding = {
+    left = 0,
+    right = 0,
+    top = 0,
+    bottom = 0,
+  },
+  window_decorations = "TITLE | RESIZE",
+  native_macos_fullscreen_mode = false,
+  send_composed_key_when_left_alt_is_pressed=false,
+  send_composed_key_when_right_alt_is_pressed=false,
+  use_ime = true,
+  window_background_opacity = 1.0,
+}
+```
+
 
 ## Alacritty 没有默认配置，要手动添加
 
