@@ -10,6 +10,11 @@ rm -rf ~/.local/share/nvim  # 清理旧的插件
 
 ```
 
+# mac系统先运行
+```bash
+xcode-select --install
+```
+
 # [NvChad](https://github.com/NvChad/NvChad)
 NvChad的安装目录是 `~/.config/nvim` , 支持自定义，自定义的内容都在`~/.config/nvim/lua/custome` 目录。
     

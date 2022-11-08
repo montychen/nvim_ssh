@@ -246,11 +246,12 @@ key_bindings:
 
 
 # 安装vim & nvim
-- mac下安装Neovim	 ` brew install neovim ` 。有时brew的版本太低，可以直接从nvim的github官网下载最新版本
+- mac推荐使用**brew**安装Neovim:	 ` brew install neovim ` 
+> 有时brew的版本太低，可以直接从nvim的github官网下载最新版本
 	1. 下载最新版本的二进制包： `nvim-macos.tar.gz`
 	2. 在命令行下解压：`tar xzvf nvim-macos.tar.gz`
 	3. 建立软连接 `ln -s ***完整的目录***/nvim-osx64/bin/nvim   /usr/local/bin/nvim`
-    4. 运行 `nvim`
+	4. 运行 `nvim`
  
 - (可选）替换默认的vim `nvim ~/.bash_profile`
 	```bash
