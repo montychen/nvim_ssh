@@ -4,11 +4,10 @@
 ```bash
 mv ~/.config/nvim ~/.config/NVIM.BAK
 
-# 删除自定义配置
-rm -rf ~/.config/nvim
+# 完全清理nvim的配置
+rm -rf ~/.config/nvim       # 删除nvim&自定义配置
+rm -rf ~/.local/share/nvim  # 清理旧的插件
 
-# 清理旧的插件
-rm -rf ~/.local/share/nvim
 ```
 
 # [NvChad](https://github.com/NvChad/NvChad)
