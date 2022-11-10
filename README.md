@@ -22,7 +22,8 @@ LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.
 ```
 ### 加载LunarVim的自定义配置
 
-LunarVim支持自定义配置， 自定义内容的入口文件是： **`~/.config/lvim/config.lua`**
+LunarVim支持自定义配置， 自定义内容的入口文件是： **`~/.config/lvim/config.lua`**。
+自定义配置模板的例子是： `~/.local/share/lunarvim/lvim/utils/installer/config.example.lua`
 ```bash
 # 克隆拉取lunarvim 的自定义配置
 git clone https://github.com/montychen/nvim  ~/.dj_soft/dj_nvim
@@ -36,7 +37,6 @@ ln -s ~/.dj_soft/dj_nvim/lunarvim_custom/config.lua  ~/.config/lvim/config.lua
 lvim --headless +'lua require("lvim.utils").generate_settings()' +qa && sort -o lv-settings.lua{,}
 ```
 
-
 ### 运行LunarVim的执行文件 lvim 
 把**lvim**所在的目录`~/.local/bin/lvim`加到PATH环境变量。在`.bash_profile`文件末尾加入一行：
 ```bash
@@ -47,7 +47,7 @@ $ lvim
 ### 运行lvim后的配置
 安装并运行`lvim`后，要运行一次 **`:TSUpdate`**，不然打开lua文件会提示
 ```lua
-lunarvim treesitter/highlighter: Error execute  /nvim/runtime/lua/vim/treesitter/query.lua. invalid node type ....
+$ lunarvim treesitter/highlighter: Error execute  /nvim/runtime/lua/vim/treesitter/query.lua. invalid node type ....
 ```
 
 ### LunarVim常用快捷键
