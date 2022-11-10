@@ -6,6 +6,22 @@ git config --global user.email "dj2503@qq.com"
 ```
 查看git全局配置 `git config --list`
 
+# 配置git忽略那些文件
+有时一些临时文件并不想被git进行版本管理，在项目目录下新建.gitignore文件并添加规则。
+- 特点：此种方式的忽略规则只局限于本项目目录及其子目录，并且.gitignore文件会被提交到远程仓库进行管理
+
+例子
+```bash
+# 忽略当前目录下的`.luarc.json`文件
+$ echo ".luarc.json" >> .gitignore
+
+# 忽略当前目录下的`*.json`文件
+$ echo "*.json" >> .gitignore
+
+# 忽略当前目录下`/logs/`目录的所有文件
+$ echo "*.json" >> .gitignore
+```
+
 
 # 用github账号的邮箱生产SSH公钥
 github对SSH密钥做了升级，原来的SHA-1，rsa等一些已经不支持了, 用新的ed25519密钥对
