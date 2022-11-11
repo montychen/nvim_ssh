@@ -88,10 +88,27 @@ lvim.builtin.treesitter.ensure_installed = {
     "rust",
     -- "java",
     "yaml",
+    "html",
+    "markdown",
+    "vim",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
+
+lvim.builtin.treesitter.incremental_selection = {   -- 增量选择/选中代码块（很好用，打开了）
+    enable = true,
+    keymaps = {
+        -- 初始化选择
+        init_selection = "<CR>",
+        -- 递增
+        node_incremental = "<CR>",
+        -- 递减
+        node_decremental = "<BS>",
+        -- 选择一个范围
+        scope_incremental = "<TAB>",
+    },
+}
 
 -- generic LSP settings
 
