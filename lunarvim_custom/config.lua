@@ -96,7 +96,7 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
 
-lvim.builtin.treesitter.incremental_selection = {   -- 增量选择/选中代码块（很好用，打开了）
+lvim.builtin.treesitter.incremental_selection = { -- 增量选择/选中代码块（很好用，打开了）
     enable = true,
     keymaps = {
         -- 初始化选择
@@ -238,6 +238,22 @@ lvim.plugins = {
             require("hop").setup()
         end,
     },
+
+    {
+        "andreadev-it/shade.nvim", -- 自动调暗不活动的窗口
+        config = function()
+            require 'shade'.setup({
+                overlay_opacity = 50,
+                opacity_step = 1,
+                keys = {
+                    brightness_up   = '<C-Up>',
+                    brightness_down = '<C-Down>',
+                    toggle          = '<Leader>s',
+                },
+                exclude_filetypes = { "neo-tree", "markdown" }
+            })
+        end,
+    }
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
