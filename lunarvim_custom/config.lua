@@ -17,6 +17,8 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>" -- 保存文件
 lvim.keys.normal_mode["<C-a>"] = "ggVG" -- 全选
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["j"] = "gj"
+lvim.keys.normal_mode["k"] = "gk"
 
 
 -- unmap a default keymapping
