@@ -14,11 +14,11 @@ lvim.colorscheme = "lunar"
 
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>" -- 保存文件
-lvim.keys.normal_mode["<C-a>"] = "ggVG" -- 全选
+lvim.keys.normal_mode["<C-a>"] = "ggVG"   -- 全选
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
-lvim.keys.normal_mode["j"] = "gj"
-lvim.keys.normal_mode["k"] = "gk"
+lvim.keys.normal_mode["j"] = "gj"   -- 自动换行的情况下使用 逻辑下一行
+lvim.keys.normal_mode["k"] = "gk"   -- 自动换行的情况下使用 逻辑上一行
 
 
 -- unmap a default keymapping
@@ -88,6 +88,7 @@ lvim.builtin.treesitter.ensure_installed = {
     "tsx",
     "css",
     "rust",
+    "zig",
     -- "java",
     "yaml",
     "html",
