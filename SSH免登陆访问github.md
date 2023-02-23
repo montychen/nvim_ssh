@@ -46,9 +46,26 @@ total 32
     -rw-r--r--  1 dj  staff   92 May 23 18:22 known_hosts.old
 </pre>
 
-#  通过ssh-add命令是把ssh私钥添加到ssh-agent的高速缓存中 
+# 通过.ssh/config 配置文件指定秘钥路径
+**~/.ssh/config** 文件是配置ssh连接相关参数的配置文件
+
+在`~/.ssh/config` 文件里加入这行
 ```bash
-ssh-add  ~/.ssh/id_ed25519
+# 如果是pem文件也是可以的
+IdentityFile ~/.ssh/id_ed25519
+```
+### 如果出现报错说明这个问题是文件的权限太大了，需要给小点：
+Permissions 0644 for '/Users/dj/.ssh/wanhe.pem' are too open.
+```bash
+chmod 600 id_ed25519
+# 或者下面这句，具体看使用的是哪个文件
+chmod 600 wanhe.pem
+
+```
+
+#### ssh-add 只是把秘钥添加到当前会话，退出会话介绍，再次登录又需要重新ssh-add
+```bash
+ssh-add  ~/.ssh/id_ed25519   
 ```
 
 # 将公钥id_ed25519.pub(注意不是id_ed25519)添加到github中
