@@ -16,11 +16,11 @@ git push origin main
 ## gitui重新定义按键符合vim的习惯，默认按键不符合vim习惯， 不同OS配置文件的目录不同
 ```
 $HOME/.config/gitui/key_bindings.ron (mac)
-$XDG_CONFIG_HOME/gitui/key_bindings.ron (linux using XDG)
 $HOME/.config/gitui/key_bindings.ron (linux)
+$XDG_CONFIG_HOME/gitui/key_bindings.ron (linux using XDG)
 %APPDATA%/gitui/key_bindings.ron (Windows)
 ```
-Mac系统，创建gitui配置文件并输入如下内容 **`nvim ~/.config/gitui/key_bindings.ron`**
+Mac和Linux系统，创建gitui配置文件并输入如下内容 **`nvim ~/.config/gitui/key_bindings.ron`**
 ```
 (
     focus_right: Some(( code: Char('l'), modifiers: ( bits: 0,),)),
