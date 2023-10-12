@@ -82,9 +82,6 @@ colors:
   primary:
     background: "#1e2127"
     foreground: "#D8DEE9"
-
-
-
   normal:
     black: "#3B4252"
     red: "#BF616A"
@@ -94,8 +91,6 @@ colors:
     magenta: "#B48EAD"
     cyan: "#88C0D0"
     white: "#abb2bf"
-
-
   bright:
     black: "#5c6370"
     red: "#e06c75"
@@ -108,6 +103,10 @@ colors:
 
 # background_opacity: 1.0
 window.opacity: 1.0
+
+#解决ssh,远程终端显示没颜色,黑白的问题
+env:
+    TERM: xterm-256color
 
 # 设置字体
 font:
